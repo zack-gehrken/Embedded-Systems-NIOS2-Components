@@ -13,13 +13,13 @@ entity PWM_GEN is
 		SYS_clk: IN STD_LOGIC;
 		PWM_VAL: IN STD_LOGIC_VECTOR(15 downto 0);
 		PWM_Out: OUT STD_LOGIC
-	);
+	     );
 end PWM_GEN;
 
 architecture Behavioral of PWM_GEN is 
 	signal PWM_int: integer;
 	signal clkcntr: integer range 0 to 65535 := 0; --Clock divider counter to create 763 Hz clock pulse 
-    signal PWM_clk: STD_LOGIC;
+        signal PWM_clk: STD_LOGIC;
 	
 begin
 	PWM_GEN: process(SYS_clk,PWM_VAL,PWM_clk) begin
